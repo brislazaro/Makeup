@@ -44,13 +44,11 @@ function printCart() {
     numberSelector.classList.add("cart__select");
     numberSelector.name = "quantity";
     numberSelector.addEventListener("change", (event) => {
-      console.log(event.target.value);
-
-      currentProduct.quantity = event.target.value;
+      currentProduct.quantity = Number(event.target.value);
 
       localStorage.setItem("cart", JSON.stringify(cart));
 
-      if (currentProduct.quantity === "0") {
+      if (currentProduct.quantity === 0) {
         cart = cart.filter((cartItem) => cartItem.name !== currentProduct.name);
       }
       localStorage.setItem("cart", JSON.stringify(cart));
