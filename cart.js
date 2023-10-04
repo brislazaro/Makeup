@@ -95,7 +95,7 @@ function calculatePrice() {
     totalPrice = totalPrice + element.quantity * element.price;
   }
 
-  price.innerHTML = `${totalPrice} Euros`;
+  price.innerHTML = `${totalPrice.toFixed(2)} Euros`;
 }
 
 printCart();
