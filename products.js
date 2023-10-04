@@ -1,47 +1,19 @@
-const inventory = [
-  {
-    brand: "Armani",
-    name: "Lip de labios Mate",
-    type: "Labios",
-    price: 38.99,
-    image: "./imagenes/labial.avif",
-  },
-  {
-    brand: "Dior",
-    name: "Rubor luminoso natural",
-    type: "Labios",
-    price: 46.99,
-    image: "./imagenes/rubor.avif",
-  },
-  {
-    brand: "Rare Beauty",
-    name: "Duo de balsamo labial",
-    type: "Labios",
-    price: 31.99,
-    image: "./imagenes/gloss.avif",
-  },
-  {
-    brand: "Benefit Cosmetics",
-    name: "Kit maquillaje y cuidado de poros",
-    type: "Cara",
-    price: 122.99,
-    image: "./imagenes/kit.avif",
-  },
-  {
-    brand: "La mer",
-    name: "Lip Volumizer",
-    type: "Labios",
-    price: 86.99,
-    image: "./imagenes/gloss2.avif",
-  },
-  {
-    brand: "Dior",
-    name: "Esmalte de uñas efecto gel",
-    type: "Uñas",
-    price: 32.99,
-    image: "./imagenes/esmalte.avif",
-  },
-];
+function calculateCartQuantityAndPrint() {
+  // obtener el elemento del dom
+  const cartButtonEl = document.querySelector(".header__button");
+
+  // calcular los productos que hay dentro del carrito
+  let totalItems = 0;
+
+  for (let i = 0; i < cart.length; i++) {
+    const element = cart[i];
+
+    totalItems = totalItems + element.quantity;
+  }
+
+  //imprimirlo
+  cartButtonEl.innerHTML = `Cart ${totalItems}`;
+}
 
 function printProducts() {
   const principalPageEl = document.querySelector(".products");
@@ -82,9 +54,31 @@ function printProducts() {
     const productButtonEl = document.createElement("button");
     productButtonEl.classList.add("product__button");
     productButtonEl.innerHTML = "Add Cart";
+    productButtonEl.addEventListener("click", (event) => {
+      const productFound = cart.find(
+        (cartElement) => cartElement.name === currentProduct.name
+      );
+
+      if (productFound === undefined) {
+        cart.push({
+          name: currentProduct.name,
+          brand: currentProduct.brand,
+          type: currentProduct.type,
+          quantity: 1,
+          price: currentProduct.price,
+          image: currentProduct.image,
+        });
+      } else {
+        productFound.quantity = productFound.quantity + 1;
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      calculateCartQuantityAndPrint();
+    });
 
     productEl.appendChild(productButtonEl);
   });
 }
 
 printProducts();
+calculateCartQuantityAndPrint();
