@@ -1,3 +1,14 @@
+.header__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__img {
+  height: 75px;
+}
+
 .page__title {
   margin-bottom: 24px;
   text-align: center;
