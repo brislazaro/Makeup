@@ -60,6 +60,16 @@
   background: #fbc1f5;
 }
 
+.product__button--disabled {
+  background-color: #cfcfcf;
+  color: gray;
+  cursor: auto;
+}
+
+.product__button--disabled:hover {
+  background: #cfcfcf;
+}
+
 @media screen and (min-width: 900px) {
   .header {
     padding: 30px 60px;
