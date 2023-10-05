@@ -59,6 +59,11 @@ function printProducts() {
         (cartElement) => cartElement.name === currentProduct.name
       );
 
+      if (productFound?.quantity === 15) {
+        alert("Maximo 15 productos");
+        return;
+      }
+
       if (productFound === undefined) {
         cart.push({
           name: currentProduct.name,

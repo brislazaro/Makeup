@@ -76,3 +76,6 @@ body {
 .footer__link {
   height: 20px;
 }
+
+@media (min-width: 900px) {
+}
