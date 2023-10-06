@@ -19,11 +19,11 @@
       <h1>¡Hola Beauty!</h1>
       <div class="container__info">
         <label for="user">Introduce tu usuario para Iniciar Sesión</label>
-        <input type="text" id="user" name="user" />
-        <button class="container__button">LogIn</button>
+        <input type="text" class="container__input" id="user" name="user" />
+        <button class="container__button" onclick="entry()">LogIn</button>
         <div class="checkbox">
-          <input type="checkbox" id="checkbox" />
-          <label for="checkbox" class="container__checkbox"
+          <input type="checkbox" id="terms-checkbox" />
+          <label for="terms-checkbox" class="container__checkbox"
             >By continuing, you agree to our
             <a
               title=" login"
@@ -55,5 +55,7 @@
         /></a>
       </div>
     </footer>
+
+    <script src="./login.js"></script>
   </body>
 </html>

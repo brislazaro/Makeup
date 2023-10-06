@@ -1,0 +1,41 @@
+.new__products {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.new__products {
+  font-weight: 400;
+}
+
+.newproducts__p1 {
+  padding: 6px;
+}
+
+.space {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.newproducts__button {
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+  border: 2px solid #000;
+  border-radius: 3px;
+  color: #000;
+  background: #fff;
+  font-size: 20px;
+  font-weight: 6200;
+  line-height: 4px;
+  padding: 12px 12px;
+  text-align: center;
+  transition-duration: 0.15s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
