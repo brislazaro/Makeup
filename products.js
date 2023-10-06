@@ -72,9 +72,23 @@ function printProducts() {
         productFound.quantity = productFound.quantity + 1;
       }
 
+      if (productFound.quantity === 15) {
+        productButtonEl.classList.add("product__button--disabled");
+        productButtonEl.disabled = true;
+      }
+
       localStorage.setItem("cart", JSON.stringify(cart));
       calculateCartQuantityAndPrint();
     });
+
+    const productFoundCart = cart.find(
+      (element) => element.name === currentProduct.name
+    );
+
+    if (productFoundCart?.quantity === 15) {
+      productButtonEl.classList.add("product__button--disabled");
+      productButtonEl.disabled = true;
+    }
 
     productEl.appendChild(productButtonEl);
   });
