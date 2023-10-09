@@ -11,26 +11,66 @@
       <img class="logo" src="./imagenes/beautylogo.avif" />
       <div class="header__buttons">
         <a title="LogIn" href="./login.html">
-          <button class="header__button">LogIn</button></a
+          <button class="header__button">Logout</button></a
         >
       </div>
     </header>
 
-    <main class="page__container">
-      <div class="new__products">
-        <label for="product" class="newproducts__label"
-          >Añade un nuevo articulo:</label
-        >
-        <div class="space">
+    <main class="page__container page__container--admin">
+      <h1>Añade un nuevo articulo</h1>
+      <form class="new__products">
+        <div class="products__field">
+          <label for="product" class="newproducts__label"
+            >Nombre articulo:</label
+          >
+
           <input
             type="text"
             class="newproducts__p1"
             id="product"
             name="product"
           />
-          <button class="newproducts__button" onclick="">Añadir</button>
         </div>
-      </div>
+
+        <div class="products__field">
+          <label for="product" class="newproducts__label"
+            >Tipo de Producto:</label
+          >
+
+          <input
+            type="text"
+            class="newproducts__p1"
+            id="product"
+            name="product"
+          />
+        </div>
+
+        <div class="products__field">
+          <label for="product" class="newproducts__label"
+            >Marca del Producto:</label
+          >
+
+          <input
+            type="text"
+            class="newproducts__p1"
+            id="product"
+            name="product"
+          />
+        </div>
+
+        <div class="products__field">
+          <label for="product" class="newproducts__label">Precio:</label>
+
+          <input
+            type="text"
+            class="newproducts__p1"
+            id="product"
+            name="product"
+          />
+        </div>
+
+        <button class="newproducts__button" onclick="">Añadir Producto</button>
+      </form>
     </main>
   </body>
 </html>
