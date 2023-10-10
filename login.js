@@ -27,6 +27,7 @@ function entry() {
   }
 
   const user = userNameEl.value;
+
   for (let i = 0; i < users.length; i++) {
     const currentUser = users[i];
 

@@ -9,6 +9,13 @@
   justify-content: center;
   align-items: center;
   gap: 25px;
+  font-weight: 600;
+  max-width: 280px;
+  background-color: #ffc5e5;
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 20px 1px #ffc5e5;
 }
 
 h1 {
@@ -16,15 +23,6 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.new__products {
-  font-weight: 600;
-  max-width: 250px;
-  background-color: #f614909c;
-  margin-top: 25px;
-  padding: 12px;
-  border-radius: 8px;
-  box-shadow: 1px 1px 20px 1px #f61490b4;
 }
 
 .products__field {
