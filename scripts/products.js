@@ -16,6 +16,7 @@ function calculateCartQuantityAndPrint() {
 }
 
 function printProducts() {
+  const userType = localStorage.getItem("user");
   const principalPageEl = document.querySelector(".products");
 
   inventory.forEach((currentProduct) => {
@@ -27,6 +28,7 @@ function printProducts() {
     const productimgEl = document.createElement("img");
     productimgEl.classList.add("product__img");
     productimgEl.src = currentProduct.image;
+    productimgEl.alt = currentProduct.name;
 
     productEl.appendChild(productimgEl);
 
@@ -43,6 +45,19 @@ function printProducts() {
 
     const productTypeEl = document.createElement("p");
     productTypeEl.innerHTML = currentProduct.type;
+    productTypeEl.classList.add("type__default");
+
+    if (currentProduct.type === "Labios") {
+      productTypeEl.classList.add("type__labios");
+    }
+
+    if (currentProduct.type === "Cara") {
+      productTypeEl.classList.add("type__cara");
+    }
+
+    if (currentProduct.type === "Uñas") {
+      productTypeEl.classList.add("type__uñas");
+    }
 
     productEl.appendChild(productTypeEl);
 
@@ -60,16 +75,18 @@ function printProducts() {
       );
 
       if (productFound === undefined) {
-        cart.push({
+        const newProductInCart = {
           name: currentProduct.name,
           brand: currentProduct.brand,
           type: currentProduct.type,
           quantity: 1,
           price: currentProduct.price,
           image: currentProduct.image,
-        });
+        };
+
+        addProductToCart(newProductInCart);
       } else {
-        productFound.quantity = productFound.quantity + 1;
+        addQuantityToCartProduct(productFound);
       }
 
       if (productFound.quantity === 15) {
@@ -77,7 +94,6 @@ function printProducts() {
         productButtonEl.disabled = true;
       }
 
-      localStorage.setItem("cart", JSON.stringify(cart));
       calculateCartQuantityAndPrint();
     });
 
@@ -91,6 +107,13 @@ function printProducts() {
     }
 
     productEl.appendChild(productButtonEl);
+
+    if (userType === "admin") {
+      const deleteButtonEl = document.createElement("button");
+      deleteButtonEl.innerHTML = "Delete";
+
+      productEl.appendChild(deleteButtonEl);
+    }
   });
 }
 

@@ -38,6 +38,22 @@
   font-weight: 900;
 }
 
+.type__default {
+  color: black;
+}
+
+.type__labios {
+  color: #bd6f95;
+}
+
+.type__cara {
+  color: #f3aacb;
+}
+
+.type__uñas {
+  color: #9e4244;
+}
+
 .product__button {
   display: inline-block;
   outline: 0;

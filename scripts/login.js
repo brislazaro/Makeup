@@ -32,6 +32,7 @@ function entry() {
     const currentUser = users[i];
 
     if (currentUser.name === user && currentUser.type === "admin") {
+      // guardar en LS el tipo de usuario conectado: setItem('user', 'admin')
       window.open("admin.html", "_self");
       return;
     }

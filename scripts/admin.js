@@ -56,8 +56,8 @@ buttonEl.addEventListener("click", (event) => {
     image: productImgEl.value,
   };
 
-  inventory.push(newProduct);
+  addProductToInventory(newProduct);
+  alert("Producto añadido correctamente");
 });
 
-console.log(inventory);
 cardNewProduct.appendChild(buttonEl);
